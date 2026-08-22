@@ -52,8 +52,8 @@ switch (task) {
     const {
       age,
       education: { university: education },
-      address: { city: address },
       address: {
+        city: address,
         coordinates: { latitude },
       },
       contacts: { email: userEmail },
