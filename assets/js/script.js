@@ -1,4 +1,4 @@
-const task = 1;
+const task = 3;
 
 switch (task) {
   case 1: {
@@ -112,8 +112,16 @@ switch (task) {
       }
 
       set likes(amount) {
-        if (!Number.isNaN(amount) && amount >= 0) {
+        if (Number.isNaN(amount)) {
+          throw new RangeError("Likes field cannot have NaN value");
+        }
+        if (amount < 0) {
+          throw new RangeError("Likes field requires positive integer");
+        }
+        try {
           this._likes = amount;
+        } catch (e) {
+          console.log(e.name, e.message);
         }
       }
 
@@ -206,8 +214,15 @@ switch (task) {
         return this._from;
       }
       set from(newFrom) {
-        if (newFrom < this.to) {
+        if (newFrom > this.to) {
+          throw new RangeError(
+            "New starting value can not exceed ending value",
+          );
+        }
+        try {
           this._from = newFrom;
+        } catch (e) {
+          console.log(e.name, e.message);
         }
       }
 
@@ -216,8 +231,15 @@ switch (task) {
       }
 
       set to(newTo) {
-        if (newTo > this.from) {
+        if (newTo < this.from) {
+          throw new RangeError(
+            "New ending value can not be lower than the starting value",
+          );
+        }
+        try {
           this._to = newTo;
+        } catch (e) {
+          console.log(e.name, e.message);
         }
       }
 
