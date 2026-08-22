@@ -134,7 +134,8 @@ switch (task) {
         tags.forEach((tag) => {
           if (
             Post.availableHashtags.includes(tag) &&
-            appliedHashtags.length < 6 && !appliedHashtags.includes(tag)
+            appliedHashtags.length < 6 &&
+            !appliedHashtags.includes(tag)
           ) {
             appliedHashtags.push(tag);
           }
@@ -197,7 +198,7 @@ switch (task) {
       ],
     );
     console.group("Hashtags that were applied to the post");
-    p2.hashtags.map((e) => console.log(`#${e} (${Post.tagColors[e]})`)); // education, js, freshcode, freshcode, freshcode, freshcode
+    p2.hashtags.forEach((e) => console.log(`#${e} (${Post.tagColors[e]})`));
     console.groupEnd();
     break;
   }
