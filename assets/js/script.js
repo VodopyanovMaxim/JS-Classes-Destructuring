@@ -1,4 +1,4 @@
-const task = 3;
+const task = 2;
 
 switch (task) {
   case 1: {
@@ -134,7 +134,7 @@ switch (task) {
         tags.forEach((tag) => {
           if (
             Post.availableHashtags.includes(tag) &&
-            appliedHashtags.length < 6
+            appliedHashtags.length < 6 && !appliedHashtags.includes(tag)
           ) {
             appliedHashtags.push(tag);
           }
@@ -165,11 +165,11 @@ switch (task) {
     p.decrementLikes();
     console.log(p.likes);
     p.decrementLikes();
-    p.decrementLikes();
-    p.decrementLikes();
-    p.decrementLikes();
+    // p.decrementLikes();
+    // p.decrementLikes();
+    // p.decrementLikes();
     console.log(p.likes);
-    p.likes = -4;
+    // p.likes = -4;
     console.log(p.likes);
     p.likes = 20;
     console.log(p.likes);
