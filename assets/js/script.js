@@ -151,9 +151,7 @@ switch (task) {
       }
 
       decrementLikes() {
-        if (this.likes > 0) {
-          this.likes -= 1;
-        }
+        this.likes -= 1;
       }
     }
 
