@@ -1,4 +1,4 @@
-const task = 2;
+const task = 3;
 
 switch (task) {
   case 1: {
@@ -205,8 +205,8 @@ switch (task) {
   case 3: {
     class RangeValidator {
       constructor(from, to) {
-        this._from = from;
-        this._to = to;
+        this.from = from;
+        this.to = to;
       }
 
       get from() {
